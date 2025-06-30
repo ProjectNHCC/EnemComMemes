@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧪 Revisão ENEM com Memes Químicos</title>
+    <style>
+        :root {
+            --purple-900: #4c1d95;
+            --blue-900: #1e3a8a;
+            --indigo-900: #312e81;
+            --yellow-400: #fbbf24;
+            --yellow-300: #fcd34d;
+            --blue-200: #bfdbfe;
+            --green-400: #34d399;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--purple-900), var(--blue-900), var(--indigo-900));
+            color: var(--white);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 20px 0;
+        }
+        
+        .header-content {
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--yellow-300);
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            color: var(--blue-200);
+            font-size: 1.1rem;
+        }
+        
+        .progress-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .avatar-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .avatar {
+            font-size: 2.5rem;
+        }
+        
+        .progress-stats {
+            text-align: right;
+        }
+        
+        .topics-count {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--yellow-300);
+        }
+        
+        .progress-bar {
+            height: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: var(--yellow-400);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .progress-text {
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active {
+            background: var(--yellow-400);
+            color: var(--purple-900);
+            border-color: var(--yellow-400);
+        }
+        
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .topic-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .card-header {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .topic-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .topic-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .topic-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            background: rgba(59, 130, 246, 0.8);
+            color: white;
+            font-size: 0.85rem;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .topic-desc {
+            color: var(--blue-200);
+            margin-bottom: 20px;
+            text-align: center;
+            min-height: 50px;
+        }
+        
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            background: var(--yellow-400);
+            color: var(--purple-900);
+            text-align: center;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: var(--yellow-300);
+            transform: scale(1.03);
+        }
+        
+        .completed-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            color: var(--green-400);
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        
+        .cta-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .cta-text {
+            color: var(--blue-200);
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-title {
+            color: var(--blue-200);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Página de tópico */
+        .topic-page {
+            display: none;
+            padding: 20px 0 50px;
+        }
+        
+        .topic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .back-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .topic-main-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .topic-main-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .topic-main-title {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .analogy-title {
+            color: var(--yellow-300);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .section-icon {
+            font-size: 1.5rem;
+        }
+        
+        .section-content {
+            line-height: 1.8;
+        }
+        
+        .question-box {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .trick-section {
+            background: linear-gradient(to right, rgba(245, 158, 11, 0.2), rgba(249, 115, 22, 0.2));
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+        
+        .trick-title {
+            color: var(--yellow-300);
+        }
+        
+        .completion-section {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .completion-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .completion-title {
+            font-size: 2rem;
+            color: var(--green-400);
+            margin-bottom: 15px;
+        }
+        
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .topics-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .progress-header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .progress-stats {
+                text-align: center;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Página inicial -->
+    <div id="home-page">
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <h1>🧪 Revisão ENEM</h1>
+                    <div class="subtitle">30 Memes para 30 Acertos no ENEM</div>
+                    <p class="tagline">Química descomplicada com humor e qualidade! 🎯</p>
+                </div>
+                
+                <div class="progress-section">
+                    <div class="progress-header">
+                        <div class="avatar-section">
+                            <div class="avatar">🎓</div>
+                            <div>
+                                <h3>Estudante</h3>
+                                <p>Nível atual do seu conhecimento</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <p class="progress-text">0% completo</p>
+                </div>
+            </div>
+        </header>
+        
+        <main class="container">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="todos">Todos</button>
+                <button class="filter-btn" data-filter="Geral">Geral</button>
+                <button class="filter-btn" data-filter="Orgânica">Orgânica</button>
+                <button class="filter-btn" data-filter="Físico-Química">Físico-Química</button>
+                <button class="filter-btn" data-filter="Ambiental">Ambiental</button>
+            </div>
+            
+            <div class="topics-grid" id="topics-container">
+                <!-- Tópicos serão inseridos aqui pelo JavaScript -->
+            </div>
+            
+            </main>
+        
+        <footer>
+            <div class="container">
+                <p class="footer-title">🧪 Revisão ENEM com Memes Químicos</p>
+                <p class="footer-text">Transformando química em diversão desde 2025 • Feito por Lucas Gomes Mestre em Química Orgânica</p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Página de tópico (inicialmente oculta) -->
+    <div id="topic-page" class="topic-page">
+        <div class="container">
+            <div class="topic-header">
+                <button class="back-btn" id="back-btn">← Voltar</button>
+                <div class="topic-badge" id="topic-category">Geral</div>
+            </div>
+            
+            <div class="topic-main-card">
+                <div class="topic-main-icon" id="topic-icon">💕</div>
+                <h2 class="topic-main-title" id="topic-title">Ligações Químicas</h2>
+                <p class="analogy-title" id="topic-analogy">Casal tóxico vs casal que divide tudo</p>
+            </div>
+            
+            <div class="content-section">
+                <div class="section-title">
+                    <span class="section-icon">📚</span>
+                    <h3>Explicação Descomplicada</h3>
+                </div>
+                <div class="section-content" id="explanation">
+                    <!-- Conteúdo será inserido aqui pelo JavaScript -->
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <div class="section-title">
+                    <span class="section-icon">🎯</span>
+                    <h3>Como Cai na Prova</h3>
+                </div>
+                <div class="section-content" id="example">
+                    <!-- Conteúdo será inserido aqui pelo JavaScript -->
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <div class="section-title">
+                    <span class="section-icon">❓</span>
+                    <h3>Questão Estilo ENEM</h3>
+                </div>
+                <div class="section-content">
+                    <div class="question-box" id="question">
+                        <!-- Questão será inserida aqui pelo JavaScript -->
+                    </div>
+                    <button class="btn" id="show-answer-btn">Ver Resposta</button>
+                    <div id="answer" style="display: none; margin-top: 20px; background: rgba(16, 185, 129, 0.2); padding: 15px; border-radius: 8px;">
+                        <!-- Resposta será inserida aqui pelo JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section trick-section">
+                <div class="section-title">
+                    <span class="section-icon trick-title">💡</span>
+                    <h3 class="trick-title">Macete Rápido</h3>
+                </div>
+                <div class="section-content" id="trick">
+                    <!-- Macete será inserido aqui pelo JavaScript -->
+                </div>
+            </div>
+            
+        </div>
+
+    <script>
+        // Dados completos dos 30 tópicos
+        const topics = [
+            { id: 1, title: "Ligações Químicas", meme: "💕", category: "Geral", description: "Casal tóxico vs casal que divide tudo",
+              explanation: `Imagine que os átomos são pessoas procurando relacionamentos:<br><br>
+              <strong>Ligação Iônica</strong> = Casal Tóxico 💔<br>
+              - Um "rouba" elétrons do outro (metal dá, não-metal pega)<br>
+              - Ficam grudados por atração de cargas opostas<br>
+              - Exemplo: Na+ e Cl- = NaCl (sal de cozinha)<br><br>
+              <strong>Ligação Covalente</strong> = Casal que Divide Tudo 💕<br>  
+              - Compartilham elétrons de boa vontade<br>
+              - Dividem tudo meio a meio (ou quase)<br>
+              - Exemplo: H₂O (água), CO₂ (gás carbônico)`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Qual tipo de ligação ocorre entre sódio (Na) e cloro (Cl)?<br><br>
+              <strong>Resolução:</strong><br>
+              - Na (metal) tem 1 elétron na camada de valência → quer perder<br>
+              - Cl (não-metal) tem 7 elétrons na camada de valência → quer ganhar 1<br>
+              - Na doa 1 elétron para Cl<br>
+              - Forma-se Na⁺ e Cl⁻ → atração eletrostática = <strong>LIGAÇÃO IÔNICA</strong>`,
+              question: `(ENEM - Adaptada) O sal de cozinha (NaCl) apresenta propriedades como:<br>
+              I. Conduz eletricidade quando dissolvido em água<br>
+              II. Possui alto ponto de fusão<br>
+              III. É formado por íons<br><br>
+              Essas características são explicadas pelo tipo de ligação química presente, que é:<br><br>
+              a) Covalente polar<br>
+              b) Covalente apolar<br>  
+              c) Iônica<br>
+              d) Metálica<br>
+              e) Intermolecular`,
+              answer: "c) Iônica",
+              explanation_answer: `
+              O NaCl é formado pela transferência de elétrons do Na (metal) para o Cl (não-metal), formando íons Na⁺ e Cl⁻.<br><br>
+              Por isso:<br>
+              - ✅ Conduz eletricidade em solução (íons livres)<br>
+              - ✅ Alto ponto de fusão (forte atração entre íons)<br>  
+              - ✅ É formado por íons (Na⁺ e Cl⁻)`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Metal + Não-metal = Casamento forçado (IÔNICA) | Não-metal + Não-metal = Divisão de bens (COVALENTE)"
+            },
+            { id: 2, title: "Funções Orgânicas", meme: "🏘️", category: "Orgânica", description: "Famílias no condomínio dos compostos",
+              explanation: `Imagine um grande condomínio onde cada família representa uma função orgânica:<br><br>
+              <strong>Família Hidrocarbonetos (Bloco A)</strong> 🏢<br>
+              - Só tem átomos de carbono e hidrogênio<br>
+              - Exemplos: metano (CH₄), gasolina, gás de cozinha<br><br>
+              <strong>Família Álcoois (Bloco B)</strong> 🥂<br>
+              - Têm o grupo OH (hidroxila)<br>
+              - Exemplos: etanol (álcool), metanol<br><br>
+              <strong>Família Ácidos Carboxílicos (Bloco C)</strong> 🍋<br>
+              - Têm o grupo COOH (carboxila)<br>
+              - Exemplos: ácido acético (vinagre), ácido cítrico`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Qual é a função orgânica do composto CH₃COOH?<br><br>
+              <strong>Resolução:</strong><br>
+              - O composto tem o grupo COOH (carboxila)<br>
+              - Portanto, pertence à família dos <strong>ÁCIDOS CARBOXÍLICOS</strong>`,
+              question: `(ENEM - Adaptada) O etanol, muito utilizado como combustível, pertence à função orgânica dos:<br><br>
+              a) Hidrocarbonetos<br>
+              b) Álcoois<br>
+              c) Éteres<br>
+              d) Aldeídos<br>
+              e) Cetonas`,
+              answer: "b) Álcoois",
+              explanation_answer: `
+              O etanol (C₂H₅OH) possui o grupo hidroxila (OH) ligado a carbono saturado, caracterizando a função álcool.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> OH ligado a carbono = Álcool | COOH = Ácido | CHO = Aldeído"
+            },
+            { id: 3, title: "Reações Químicas", meme: "🎭", category: "Geral", description: "Festa de troca de casais",
+              explanation: `As reações químicas são como relacionamentos entre elementos:<br><br>
+              <strong>Síntese</strong> = Casamento 💍<br>
+              - Duas substâncias se juntam para formar uma nova<br>
+              - Exemplo: 2H₂ + O₂ → 2H₂O<br><br>
+              <strong>Decomposição</strong> = Divórcio 💔<br>
+              - Uma substância se quebra em duas ou mais<br>
+              - Exemplo: 2H₂O → 2H₂ + O₂<br><br>
+              <strong>Troca</strong> = Troca de casais 🔄<br>
+              - Elementos trocam de parceiros<br>
+              - Exemplo: AB + CD → AD + CB`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Classifique a reação: Zn + 2HCl → ZnCl₂ + H₂<br><br>
+              <strong>Resolução:</strong><br>
+              - O zinco (Zn) troca de lugar com o hidrogênio (H)<br>
+              - Portanto, é uma reação de <strong>TROCA</strong>`,
+              question: `(ENEM - Adaptada) A reação de formação da água a partir de hidrogênio e oxigênio é um exemplo de:<br><br>
+              a) Decomposição<br>
+              b) Síntese<br>
+              c) Troca<br>
+              d) Dupla-troca<br>
+              e) Neutralização`,
+              answer: "b) Síntese",
+              explanation_answer: `
+              A reação 2H₂ + O₂ → 2H₂O envolve a combinação de duas substâncias para formar uma única substância, caracterizando uma reação de síntese.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Juntou = Síntese | Separou = Decomposição | Trocou = Troca"
+            },
+            { id: 4, title: "pH", meme: "😤", category: "Geral", description: "Termômetro do humor químico",
+              explanation: `O pH mede a acidez ou basicidade de uma solução:<br><br>
+              <strong>pH < 7</strong> = Ácido (carrancudo) 😠<br>
+              - Exemplos: suco de limão, vinagre<br><br>
+              <strong>pH = 7</strong> = Neutro (equilibrado) 😐<br>
+              - Exemplo: água pura<br><br>
+              <strong>pH > 7</strong> = Básico (feliz) 😄<br>
+              - Exemplos: sabão, bicarbonato de sódio`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Qual é o pH de uma solução com [H⁺] = 10⁻³ mol/L?<br><br>
+              <strong>Resolução:</strong><br>
+              pH = -log[H⁺] = -log(10⁻³) = -(-3) = 3<br>
+              Portanto, pH = 3 (solução ácida)`,
+              question: `(ENEM - Adaptada) O pH do suco gástrico humano é aproximadamente 2. Isso significa que o suco gástrico:<br><br>
+              a) É básico<br>
+              b) É neutro<br>
+              c) É ácido<br>
+              d) Não possui íons H⁺<br>
+              e) Possui pH maior que 7`,
+              answer: "c) É ácido",
+              explanation_answer: `
+              O pH 2 é menor que 7, portanto a solução é ácida. O suco gástrico contém ácido clorídrico que ajuda na digestão.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> pH baixo = Ácido | pH alto = Base | pH 7 = Neutro"
+            },
+            { id: 5, title: "Oxirredução", meme: "🥷", category: "Geral", description: "Ladrão de elétrons",
+              explanation: `Na oxirredução, ocorre transferência de elétrons:<br><br>
+              <strong>Oxidação</strong> = Ladrão de elétrons 🥷<br>
+              - Perda de elétrons<br>
+              - Número de oxidação aumenta<br><br>
+              <strong>Redução</strong> = Recebedor de elétrons 🙏<br>
+              - Ganho de elétrons<br>
+              - Número de oxidação diminui<br><br>
+              <strong>Regra:</strong> O agente oxidante causa oxidação e sofre redução.`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Na reação Zn + Cu²⁺ → Zn²⁺ + Cu, quem sofre oxidação?<br><br>
+              <strong>Resolução:</strong><br>
+              - Zn perde elétrons (0 → +2) → Oxidação<br>
+              - Cu²⁺ ganha elétrons (+2 → 0) → Redução`,
+              question: `(ENEM - Adaptada) Na reação de combustão do metano (CH₄ + 2O₂ → CO₂ + 2H₂O), o elemento que sofre redução é:<br><br>
+              a) Carbono<br>
+              b) Hidrogênio<br>
+              c) Oxigênio<br>
+              d) Metano<br>
+              e) Água`,
+              answer: "c) Oxigênio",
+              explanation_answer: `
+              O oxigênio tem nox 0 no O₂ e -2 no CO₂ e H₂O, portanto ganha elétrons (sofre redução).`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> LEO: Perde Elétrons Oxidação | GER: Ganha Elétrons Redução"
+            },
+            { id: 6, title: "Pilhas", meme: "🔋", category: "Físico-Química", description: "Bateria do celular sem carga",
+              explanation: `Pilhas são dispositivos que transformam energia química em elétrica:<br><br>
+              <strong>Ânodo</strong> = Polo negativo (oxidação)<br>
+              <strong>Cátodo</strong> = Polo positivo (redução)<br>
+              <strong>Ponte salina</strong> = Ponte de comunicação entre os eletrodos<br><br>
+              Exemplo: Pilha de Daniell (Zn | Zn²⁺ || Cu²⁺ | Cu)`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Qual é o ânodo na pilha Zn | Zn²⁺ || Cu²⁺ | Cu?<br><br>
+              <strong>Resolução:</strong><br>
+              - Zn tem maior tendência a oxidar que Cu<br>
+              - Portanto, Zn é o <strong>ÂNODO</strong>`,
+              question: `(ENEM - Adaptada) Em uma pilha, o eletrodo onde ocorre a oxidação é chamado de:<br><br>
+              a) Cátodo<br>
+              b) Ânodo<br>
+              c) Eletrólito<br>
+              d) Solução<br>
+              e) Ponte salina`,
+              answer: "b) Ânodo",
+              explanation_answer: `
+              O ânodo é o polo negativo onde ocorre a oxidação (perda de elétrons).`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Ânodo = Oxidação | Cátodo = Redução"
+            },
+            { id: 7, title: "Eletrólise", meme: "💪", category: "Físico-Química", description: "Academia dos íons",
+              explanation: `Eletrólise é o processo inverso da pilha - usa energia elétrica para produzir reações químicas:<br><br>
+              <strong>Eletrólise ígnea</strong> = Compostos iônicos fundidos<br>
+              <strong>Eletrólise aquosa</strong> = Solução aquosa de eletrólitos<br><br>
+              Exemplo: Eletrólise da água (2H₂O → 2H₂ + O₂)`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              O que ocorre no cátodo durante a eletrólise de NaCl líquido?<br><br>
+              <strong>Resolução:</strong><br>
+              - No cátodo ocorre redução<br>
+              - Na⁺ + e⁻ → Na<br>
+              - Portanto, forma-se sódio metálico`,
+              question: `(ENEM - Adaptada) O processo industrial de obtenção de alumínio a partir da bauxita envolve:<br><br>
+              a) Eletrólise ígnea<br>
+              b) Eletrólise aquosa<br>
+              c) Pilha eletroquímica<br>
+              d) Redução química<br>
+              e) Oxidação catalítica`,
+              answer: "a) Eletrólise ígnea",
+              explanation_answer: `
+              O alumínio é obtido pela eletrólise ígnea da alumina (Al₂O₃) dissolvida em criolita fundida.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Pilha = Espontânea | Eletrólise = Não espontânea"
+            },
+            { id: 8, title: "Radioatividade", meme: "💚", category: "Geral", description: "Hulk e transformação",
+              explanation: `Elementos radioativos emitem radiação para se tornarem estáveis:<br><br>
+              <strong>Radiação alfa (α)</strong> = Partículas pesadas (núcleo de hélio)<br>
+              <strong>Radiação beta (β)</strong> = Elétrons de alta energia<br>
+              <strong>Radiação gama (γ)</strong> = Radiação eletromagnética<br><br>
+              Exemplo: Urânio-238 → Tório-234 + partícula alfa`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Qual é a partícula emitida quando um núcleo emite radiação beta?<br><br>
+              <strong>Resolução:</strong><br>
+              - Radiação beta é emissão de elétrons<br>
+              - Representada por: ₋₁⁰e`,
+              question: `(ENEM - Adaptada) A radiação gama (γ) é:<br><br>
+              a) Um núcleo de hélio<br>
+              b) Um elétron de alta energia<br>
+              c) Uma onda eletromagnética<br>
+              d) Um próton<br>
+              e) Um nêutron`,
+              answer: "c) Uma onda eletromagnética",
+              explanation_answer: `
+              A radiação gama é uma onda eletromagnética de alta energia, semelhante aos raios X, mas mais penetrante.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Alfa = Pouca penetração | Beta = Média penetração | Gama = Alta penetração"
+            },
+            { id: 9, title: "Densidade", meme: "🧊", category: "Físico-Química", description: "Pedra vs gelo no copo",
+              explanation: `Densidade é a relação entre massa e volume:<br><br>
+              <strong>d = m/V</strong><br><br>
+              - Objetos com densidade menor que a água flutuam<br>
+              - Objetos com densidade maior afundam<br><br>
+              Exemplo: Gelo (d=0,92 g/cm³) flutua na água (d=1 g/cm³)`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Qual é a densidade de um objeto com massa 50g e volume 25cm³?<br><br>
+              <strong>Resolução:</strong><br>
+              d = m/V = 50g / 25cm³ = 2g/cm³`,
+              question: `(ENEM - Adaptada) Um cubo de gelo flutua na água porque:<br><br>
+              a) Sua densidade é maior que a da água<br>
+              b) Sua densidade é menor que a da água<br>
+              c) A água está congelada<br>
+              d) O gelo é mais pesado<br>
+              e) A água é polar`,
+              answer: "b) Sua densidade é menor que a da água",
+              explanation_answer: `
+              O gelo tem densidade 0,92 g/cm³, menor que a água líquida (1 g/cm³), por isso flutua.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> d > água → Afunda | d < água → Flutua"
+            },
+            { id: 10, title: "Solubilidade", meme: "💔", category: "Físico-Química", description: "Casal água e óleo",
+              explanation: `Solubilidade é a capacidade de uma substância se dissolver em outra:<br><br>
+              <strong>"Semelhante dissolve semelhante"</strong><br>
+              - Polar dissolve polar<br>
+              - Apolar dissolve apolar<br><br>
+              Exemplo: Água (polar) não dissolve óleo (apolar)`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Por que o sal (NaCl) se dissolve na água?<br><br>
+              <strong>Resolução:</strong><br>
+              - Sal é composto iônico (polar)<br>
+              - Água é polar<br>
+              - Portanto, "semelhante dissolve semelhante"`,
+              question: `(ENEM - Adaptada) O etanol (álcool) é capaz de dissolver tanto substâncias polares quanto apolares devido:<br><br>
+              a) À sua baixa polaridade<br>
+              b) À sua cadeia apolar e grupo OH polar<br>
+              c) Ao seu baixo ponto de ebulição<br>
+              d) À sua alta densidade<br>
+              e) À sua acidez`,
+              answer: "b) À sua cadeia apolar e grupo OH polar",
+              explanation_answer: `
+              O etanol tem uma parte apolar (cadeia de carbono) e uma parte polar (grupo OH), permitindo que dissolva ambos os tipos de substâncias.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Polar + Polar = Mistura | Apolar + Apolar = Mistura | Polar + Apolar = Separa"
+            },
+            { id: 11, title: "Estados Físicos", meme: "🎭", category: "Físico-Química", description: "3 moods do aluno no ENEM",
+              explanation: `Mudanças de estado físico dependem da temperatura e pressão:<br><br>
+              <strong>Fusão</strong> = Sólido → Líquido<br>
+              <strong>Vaporização</strong> = Líquido → Gasoso<br>
+              <strong>Condensação</strong> = Gasoso → Líquido<br>
+              <strong>Solidificação</strong> = Líquido → Sólido<br>
+              <strong>Sublimação</strong> = Sólido → Gasoso (e vice-versa)`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Qual mudança de estado ocorre quando a água líquida vira gelo?<br><br>
+              <strong>Resolução:</strong><br>
+              - Líquido → Sólido<br>
+              - Portanto, <strong>SOLIDIFICAÇÃO</strong>`,
+              question: `(ENEM - Adaptada) O processo de passagem direta do estado sólido para o gasoso é chamado de:<br><br>
+              a) Fusão<br>
+              b) Vaporização<br>
+              c) Condensação<br>
+              d) Solidificação<br>
+              e) Sublimação`,
+              answer: "e) Sublimação",
+              explanation_answer: `
+              A sublimação é a passagem direta do estado sólido para o gasoso, como ocorre com a naftalina.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Sólido → Líquido = Fusão | Líquido → Gasoso = Ebulição"
+            },
+            { id: 12, title: "Misturas", meme: "🍲", category: "Geral", description: "Feijão com pedra",
+              explanation: `Misturas podem ser homogêneas ou heterogêneas:<br><br>
+              <strong>Homogêneas</strong> = Uma única fase (ex: água e sal)<br>
+              <strong>Heterogêneas</strong> = Mais de uma fase (ex: água e óleo)<br><br>
+              Métodos de separação: Filtração, decantação, destilação, etc.`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Como separar uma mistura de água e óleo?<br><br>
+              <strong>Resolução:</strong><br>
+              - Decantação: o óleo, menos denso, fica na parte superior<br>
+              - Ou funil de separação`,
+              question: `(ENEM - Adaptada) Para separar os componentes de uma mistura de água e areia, o método mais adequado é:<br><br>
+              a) Destilação<br>
+              b) Filtração<br>
+              c) Decantação<br>
+              d) Centrifugação<br>
+              e) Evaporação`,
+              answer: "b) Filtração",
+              explanation_answer: `
+              A filtração é o método ideal para separar sólidos insolúveis (como areia) de líquidos (como água).`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Sólido + Líquido = Filtração | Líquido + Líquido = Decantação"
+            },
+            { id: 13, title: "Tabela Periódica", meme: "🥋", category: "Geral", description: "Clãs elementares",
+              explanation: `Elementos organizados por número atômico e propriedades periódicas:<br><br>
+              <strong>Famílias (grupos)</strong> = Colunas verticais (ex: 1A - metais alcalinos)<br>
+              <strong>Períodos</strong> = Linhas horizontais<br>
+              <strong>Metais</strong> = Lado esquerdo e centro<br>
+              <strong>Não-metais</strong> = Lado direito<br>
+              <strong>Semi-metais</strong> = Linha diagonal`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Qual é o grupo do elemento Flúor (F)?<br><br>
+              <strong>Resolução:</strong><br>
+              - Flúor está na coluna 17<br>
+              - Portanto, grupo dos <strong>HALOGÊNIOS</strong>`,
+              question: `(ENEM - Adaptada) Os elementos da família 1A da tabela periódica são conhecidos como:<br><br>
+              a) Metais alcalinos<br>
+              b) Metais alcalino-terrosos<br>
+              c) Halogênios<br>
+              d) Gases nobres<br>
+              e) Calcogênios`,
+              answer: "a) Metais alcalinos",
+              explanation_answer: `
+              A família 1A (grupo 1) é formada pelos metais alcalinos: Li, Na, K, Rb, Cs, Fr.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Grupo 1 = Alcalinos | Grupo 2 = Alcalino-terrosos | Grupo 17 = Halogênios"
+            },
+            { id: 14, title: "Reatividade", meme: "😍", category: "Geral", description: "O crush mais reativo",
+              explanation: `A reatividade dos elementos depende da tendência em ganhar ou perder elétrons:<br><br>
+              <strong>Metais</strong> = Mais reativos perdem elétrons mais facilmente<br>
+              <strong>Não-metais</strong> = Mais reativos ganham elétrons mais facilmente<br><br>
+              Série de reatividade: K > Na > Li > ...`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Qual é o metal mais reativo: sódio (Na) ou magnésio (Mg)?<br><br>
+              <strong>Resolução:</strong><br>
+              - Na está antes de Mg na série de reatividade<br>
+              - Portanto, <strong>SÓDIO</strong> é mais reativo`,
+              question: `(ENEM - Adaptada) Qual dos seguintes metais reage mais vigorosamente com água?<br><br>
+              a) Ferro (Fe)<br>
+              b) Zinco (Zn)<br>
+              c) Cobre (Cu)<br>
+              d) Sódio (Na)<br>
+              e) Prata (Ag)`,
+              answer: "d) Sódio (Na)",
+              explanation_answer: `
+              O sódio é um metal alcalino altamente reativo que reage violentamente com água, liberando hidrogênio e formando NaOH.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Metais: Reatividade aumenta de cima para baixo | Não-metais: Reatividade aumenta de baixo para cima"
+            },
+            { id: 15, title: "Leis Ponderais", meme: "👵", category: "Geral", description: "Receita da vovó",
+              explanation: `Leis que relacionam massas nas reações químicas:<br><br>
+              <strong>Lei de Lavoisier</strong> = Conservação da massa<br>
+              <strong>Lei de Proust</strong> = Proporções constantes<br><br>
+              Exemplo: 2g H₂ + 16g O₂ → 18g H₂O`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Em uma reação, 12g de carbono reagem com 32g de oxigênio. Qual a massa de CO₂ formada?<br><br>
+              <strong>Resolução:</strong><br>
+              - Pela Lei de Lavoisier: massa reagentes = massa produtos<br>
+              - 12g + 32g = 44g de CO₂`,
+              question: `(ENEM - Adaptada) "Na natureza, nada se cria, nada se perde, tudo se transforma." Esta frase de Lavoisier está relacionada:<br><br>
+              a) À lei das proporções constantes<br>
+              b) À lei dos gases ideais<br>
+              c) À lei da conservação da massa<br>
+              d) À lei da velocidade das reações<br>
+              e) À lei da afinidade química`,
+              answer: "c) À lei da conservação da massa",
+              explanation_answer: `
+              Lavoisier estabeleceu que a massa total dos reagentes é igual à massa total dos produtos em uma reação química.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Lavoisier: Massa conserva | Proust: Proporção fixa"
+            },
+            { id: 16, title: "Estequiometria", meme: "🧮", category: "Geral", description: "Regra de 3 apocalíptica",
+              explanation: `Cálculo das quantidades de reagentes e produtos em reações químicas:<br><br>
+              Passos:<br>
+              1. Balancear a equação<br>
+              2. Converter massa em mol<br>
+              3. Usar proporção estequiométrica<br>
+              4. Converter mol em unidade desejada`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Quantos mols de H₂ são produzidos na reação de 2 mols de Na com água?<br>
+              2Na + 2H₂O → 2NaOH + H₂<br><br>
+              <strong>Resolução:</strong><br>
+              - Proporção: 2 mols Na : 1 mol H₂<br>
+              - Portanto, 2 mols Na → 1 mol H₂`,
+              question: `(ENEM - Adaptada) Na reação de combustão do metano: CH₄ + 2O₂ → CO₂ + 2H₂O, a massa de oxigênio necessária para queimar 16g de metano é:<br><br>
+              a) 16g<br>
+              b) 32g<br>
+              c) 64g<br>
+              d) 80g<br>
+              e) 128g`,
+              answer: "c) 64g",
+              explanation_answer: `
+              - CH₄ = 16g/mol<br>
+              - Proporção: 1 mol CH₄ : 2 mol O₂<br>
+              - Massa O₂ = 2 × 32g = 64g`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Estequiometria = Regra de três com química"
+            },
+            { id: 17, title: "Massas Molares", meme: "🛒", category: "Geral", description: "Supermercado dos elementos",
+              explanation: `Massa molar é a massa de um mol de substância:<br><br>
+              <strong>Unidade: g/mol</strong><br>
+              - Elemento: massa atômica em g/mol<br>
+              - Composto: soma das massas atômicas<br><br>
+              Exemplo: H₂O = 2×1 + 16 = 18g/mol`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Qual a massa molar do NaCl?<br><br>
+              <strong>Resolução:</strong><br>
+              - Na = 23g/mol, Cl = 35,5g/mol<br>
+              - NaCl = 23 + 35,5 = 58,5g/mol`,
+              question: `(ENEM - Adaptada) A massa molar do ácido sulfúrico (H₂SO₄) é:<br>
+              (Dados: H=1, S=32, O=16)<br><br>
+              a) 49 g/mol<br>
+              b) 50 g/mol<br>
+              c) 96 g/mol<br>
+              d) 98 g/mol<br>
+              e) 100 g/mol`,
+              answer: "d) 98 g/mol",
+              explanation_answer: `
+              H₂SO₄ = (2×1) + 32 + (4×16) = 2 + 32 + 64 = 98 g/mol`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Massa molar = Somar todas as massas atômicas da fórmula"
+            },
+            { id: 18, title: "Volume Molar", meme: "🎈", category: "Físico-Química", description: "Balão de 22,4L",
+              explanation: `Volume ocupado por 1 mol de gás nas CNTP (0°C e 1 atm):<br><br>
+              <strong>Volume Molar = 22,4 L/mol</strong><br><br>
+              Para gases ideais: PV = nRT`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Qual o volume ocupado por 2 mols de O₂ nas CNTP?<br><br>
+              <strong>Resolução:</strong><br>
+              - 1 mol → 22,4 L<br>
+              - 2 mols → 44,8 L`,
+              question: `(ENEM - Adaptada) O volume molar de um gás ideal nas CNTP é:<br><br>
+              a) 22,4 mL<br>
+              b) 22,4 L<br>
+              c) 24,0 L<br>
+              d) 10,0 L<br>
+              e) 1,0 L`,
+              answer: "b) 22,4 L",
+              explanation_answer: `
+              Nas Condições Normais de Temperatura e Pressão (CNTP), 1 mol de qualquer gás ideal ocupa 22,4 litros.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> CNTP: 1 mol = 22,4 L"
+            },
+            { id: 19, title: "Número de Avogadro", meme: "🎓", category: "Geral", description: "Turma gigante de formatura",
+              explanation: `Número de partículas em 1 mol:<br><br>
+              <strong>6,02 × 10²³ partículas/mol</strong><br><br>
+              Exemplo: 1 mol de átomos = 6,02 × 10²³ átomos`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Quantas moléculas há em 0,5 mol de CO₂?<br><br>
+              <strong>Resolução:</strong><br>
+              - 1 mol → 6,02 × 10²³ moléculas<br>
+              - 0,5 mol → 3,01 × 10²³ moléculas`,
+              question: `(ENEM - Adaptada) O número de Avogadro corresponde a:<br><br>
+              a) Número de átomos em 1g de hidrogênio<br>
+              b) Número de moléculas em 1 mol de substância<br>
+              c) Número de elétrons em 1 átomo<br>
+              d) Número de prótons em 1 átomo<br>
+              e) Número de moléculas em 1g de água`,
+              answer: "b) Número de moléculas em 1 mol de substância",
+              explanation_answer: `
+              O número de Avogadro (6,02 × 10²³) é o número de partículas (átomos, moléculas, íons) contidas em 1 mol de qualquer substância.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> 1 mol = 6,02 × 10²³ partículas"
+            },
+            { id: 20, title: "Forças Intermoleculares", meme: "👥", category: "Físico-Química", description: "Panelinha do colégio",
+              explanation: `Forças entre moléculas que determinam propriedades físicas:<br><br>
+              <strong>Dipolo-dipolo</strong> = Entre moléculas polares<br>
+              <strong>Ligação de hidrogênio</strong> = Tipo especial de dipolo-dipolo (H com O, N ou F)<br>
+              <strong>London</strong> = Entre moléculas apolares<br><br>
+              Ordem de força: London < dipolo-dipolo < ligação de hidrogênio`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Qual a força intermolecular predominante na água?<br><br>
+              <strong>Resolução:</strong><br>
+              - Água é polar e tem H ligado a O<br>
+              - Portanto, <strong>LIGAÇÃO DE HIDROGÊNIO</strong>`,
+              question: `(ENEM - Adaptada) As forças de London ocorrem entre:<br><br>
+              a) Íons<br>
+              b) Moléculas polares<br>
+              c) Moléculas apolares<br>
+              d) Átomos metálicos<br>
+              e) Íons e moléculas polares`,
+              answer: "c) Moléculas apolares",
+              explanation_answer: `
+              As forças de dispersão de London ocorrem entre todas as moléculas, mas são predominantes em moléculas apolares.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> H com O, N, F → Ligação de hidrogênio"
+            },
+            { id: 21, title: "Isomeria", meme: "👬", category: "Orgânica", description: "Gêmeos diferentes",
+              explanation: `Compostos com mesma fórmula molecular mas estruturas diferentes:<br><br>
+              <strong>Isomeria plana</strong>:<br>
+              - Cadeia<br>
+              - Posição<br>
+              - Função<br>
+              - Compensação<br>
+              - Tautomeria<br><br>
+              <strong>Isomeria espacial</strong>:<br>
+              - Geométrica (cis-trans)<br>
+              - Óptica`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Butano e metilpropano são isômeros de:<br><br>
+              <strong>Resolução:</strong><br>
+              - Ambos C₄H₁₀<br>
+              - Diferentes cadeias<br>
+              - Portanto, isomeria de <strong>CADEIA</strong>`,
+              question: `(ENEM - Adaptada) O composto CH₃-CH=CH-CH₃ apresenta isomeria:<br><br>
+              a) De função<br>
+              b) De cadeia<br>
+              c) Óptica<br>
+              d) Geométrica<br>
+              e) Tautomeria`,
+              answer: "d) Geométrica",
+              explanation_answer: `
+              O composto but-2-eno possui dois carbonos com ligação dupla e dois substituintes diferentes em cada carbono, podendo apresentar isomeria geométrica cis-trans.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Mesma fórmula, estrutura diferente = Isômeros"
+            },
+            { id: 22, title: "Polímeros", meme: "📺", category: "Orgânica", description: "Novela da cadeia longa",
+              explanation: `Grandes moléculas formadas pela repetição de unidades menores (monômeros):<br><br>
+              <strong>Polímeros naturais</strong>: Celulose, borracha, proteínas<br>
+              <strong>Polímeros sintéticos</strong>: Plásticos, náilon, PVC<br><br>
+              Exemplo: Eteno → Polietileno`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Qual o monômero do poliestireno?<br><br>
+              <strong>Resolução:</strong><br>
+              - Estireno (fenileteno)<br>
+              - C₆H₅-CH=CH₂`,
+              question: `(ENEM - Adaptada) O teflon, usado em panelas antiaderentes, é um polímero derivado do:<br><br>
+              a) Eteno<br>
+              b) Propeno<br>
+              c) Cloreto de vinila<br>
+              d) Tetrafluoreteno<br>
+              e) Estireno`,
+              answer: "d) Tetrafluoreteno",
+              explanation_answer: `
+              O teflon (politetrafluoretileno, PTFE) é obtido pela polimerização do tetrafluoreteno (F₂C=CF₂).`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Monômero → Polímero = Reação de polimerização"
+            },
+            { id: 23, title: "Química Ambiental", meme: "🌳", category: "Ambiental", description: "Ar poluído vs floresta ninja",
+              explanation: `Impactos químicos no meio ambiente e soluções:<br><br>
+              <strong>Efeito estufa</strong>: CO₂, CH₄, vapor d'água<br>
+              <strong>Chuva ácida</strong>: SO₂, NOx<br>
+              <strong>Destruição da camada de ozônio</strong>: CFCs<br>
+              <strong>Poluição da água</strong>: Eutrofização`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Qual gás é o principal responsável pelo efeito estufa?<br><br>
+              <strong>Resolução:</strong><br>
+              - Dióxido de carbono (CO₂) é o principal contribuinte`,
+              question: `(ENEM - Adaptada) A eutrofização de lagos e rios é causada principalmente pelo excesso de:<br><br>
+              a) Metais pesados<br>
+              b) Gases tóxicos<br>
+              c) Nutrientes (fósforo e nitrogênio)<br>
+              d) Petróleo<br>
+              e) Material radioativo`,
+              answer: "c) Nutrientes (fósforo e nitrogênio)",
+              explanation_answer: `
+              O excesso de nutrientes causa crescimento excessivo de algas, que consomem o oxigênio da água, levando à morte de peixes e outros organismos.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Eutrofização = Excesso de nutrientes na água"
+            },
+            { id: 24, title: "Ciclo do Carbono", meme: "🔄", category: "Ambiental", description: "Netflix do carbono",
+              explanation: `Movimento do carbono entre atmosfera, oceanos, seres vivos e solo:<br><br>
+              Processos:<br>
+              - Fotossíntese: CO₂ → matéria orgânica<br>
+              - Respiração: matéria orgânica → CO₂<br>
+              - Combustão: matéria orgânica → CO₂<br>
+              - Decomposição: matéria orgânica → CO₂`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Como o carbono retorna à atmosfera?<br><br>
+              <strong>Resolução:</strong><br>
+              - Respiração, combustão e decomposição`,
+              question: `(ENEM - Adaptada) O aumento da concentração de CO₂ na atmosfera, que intensifica o efeito estufa, está relacionado principalmente:<br><br>
+              a) À fotossíntese das plantas<br>
+              b) À respiração dos animais<br>
+              c) À queima de combustíveis fósseis<br>
+              d) À formação de carbonatos<br>
+              e) À decomposição natural`,
+              answer: "c) À queima de combustíveis fósseis",
+              explanation_answer: `
+              A queima de carvão, petróleo e gás natural libera grandes quantidades de CO₂ que estavam armazenadas há milhões de anos.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Fotossíntese: CO₂ → O₂ | Respiração/Combustão: O₂ → CO₂"
+            },
+            { id: 25, title: "Equilíbrio Químico", meme: "⚖️", category: "Físico-Química", description: "Balança com festa e ressaca",
+              explanation: `Estado em que as velocidades das reações direta e inversa são iguais:<br><br>
+              <strong>Constante de equilíbrio (Kc)</strong><br>
+              - Kc > 1: produtos favorecidos<br>
+              - Kc < 1: reagentes favorecidos<br><br>
+              Princípio de Le Chatelier: o sistema se ajusta a perturbações`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Para a reação N₂ + 3H₂ ⇌ 2NH₃, o que ocorre se aumentarmos a pressão?<br><br>
+              <strong>Resolução:</strong><br>
+              - Lado com menos mols é favorecido (2 mols vs 4 mols)<br>
+              - Portanto, desloca para a direita (formação de NH₃)`,
+              question: `(ENEM - Adaptada) De acordo com o Princípio de Le Chatelier, ao se adicionar mais reagente a um sistema em equilíbrio, o sistema:<br><br>
+              a) Não se altera<br>
+              b) Desloca no sentido dos produtos<br>
+              c) Desloca no sentido dos reagentes<br>
+              d) Diminui a temperatura<br>
+              e) Aumenta a pressão`,
+              answer: "b) Desloca no sentido dos produtos",
+              explanation_answer: `
+              Ao adicionar mais reagente, o sistema desloca no sentido de consumir o reagente adicional, ou seja, no sentido direto (formação de produtos).`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Adiciona reagente → Favorece produtos | Adiciona produto → Favorece reagentes"
+            },
+            { id: 26, title: "Termoquímica", meme: "🔥", category: "Físico-Química", description: "Quente e frio na briga",
+              explanation: `Estuda as trocas de calor nas reações químicas:<br><br>
+              <strong>Reações exotérmicas</strong>: Liberam calor (ΔH < 0)<br>
+              <strong>Reações endotérmicas</strong>: Absorvem calor (ΔH > 0)<br><br>
+              Exemplo: Combustão é exotérmica`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Na reação: C + O₂ → CO₂ + 393 kJ, qual o valor de ΔH?<br><br>
+              <strong>Resolução:</strong><br>
+              - Calor é liberado (393 kJ)<br>
+              - Portanto, ΔH = -393 kJ/mol`,
+              question: `(ENEM - Adaptada) A reação de fotossíntese é:<br>
+              6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂<br>
+              Essa reação é:<br><br>
+              a) Exotérmica com ΔH > 0<br>
+              b) Exotérmica com ΔH < 0<br>
+              c) Endotérmica com ΔH > 0<br>
+              d) Endotérmica com ΔH < 0<br>
+              e) Isotérmica com ΔH = 0`,
+              answer: "c) Endotérmica com ΔH > 0",
+              explanation_answer: `
+              A fotossíntese requer energia solar para ocorrer, portanto é uma reação endotérmica (ΔH > 0).`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Libera calor = Exotérmica | Absorve calor = Endotérmica"
+            },
+            { id: 27, title: "Catalisadores", meme: "⚡", category: "Físico-Química", description: "Atalho ninja",
+              explanation: `Substâncias que aumentam a velocidade das reações sem serem consumidas:<br><br>
+              - Reduzem a energia de ativação<br>
+              - Não alteram o equilíbrio<br>
+              - São específicos para cada reação<br><br>
+              Exemplo: Catalisador em conversor catalítico de carros`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              O que ocorre com a constante de equilíbrio quando se adiciona um catalisador?<br><br>
+              <strong>Resolução:</strong><br>
+              - O catalisador não altera o equilíbrio, apenas a velocidade<br>
+              - Portanto, a constante de equilíbrio <strong>NÃO SE ALTERA</strong>`,
+              question: `(ENEM - Adaptada) Os catalisadores são importantes em processos industriais porque:<br><br>
+              a) Alteram a constante de equilíbrio<br>
+              b) Torna as reações endotérmicas em exotérmicas<br>
+              c) Aumentam o rendimento dos produtos<br>
+              d) Diminuem o tempo necessário para atingir o equilíbrio<br>
+              e) Consomem-se durante a reação`,
+              answer: "d) Diminuem o tempo necessário para atingir o equilíbrio",
+              explanation_answer: `
+              Os catalisadores aceleram a velocidade das reações, fazendo com que o equilíbrio seja atingido mais rapidamente, mas não alteram a posição do equilíbrio.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Catalisador = Acelera a reação sem ser consumido"
+            },
+            { id: 28, title: "Água", meme: "💧", category: "Geral", description: "Solvente do camarote",
+              explanation: `Substância essencial para a vida com propriedades únicas:<br><br>
+              - Polar: excelente solvente<br>
+              - Ligações de hidrogênio: alto ponto de ebulição<br>
+              - Densidade anômala: gelo menos denso que água líquida<br>
+              - Alto calor específico: regula temperatura`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Por que o gelo flutua na água?<br><br>
+              <strong>Resolução:</strong><br>
+              - O gelo tem densidade menor que a água líquida<br>
+              - Devido à estrutura cristalina hexagonal que aumenta o volume`,
+              question: `(ENEM - Adaptada) A propriedade da água que permite a sobrevivência de peixes em lagos congelados é:<br><br>
+              a) Sua polaridade<br>
+              b) Seu alto calor específico<br>
+              c) A densidade do gelo ser menor que a da água<br>
+              d) Seu pH neutro<br>
+              e) Sua condutividade elétrica`,
+              answer: "c) A densidade do gelo ser menor que a da água",
+              explanation_answer: `
+              Como o gelo é menos denso que a água líquida, ele flutua, formando uma camada isolante que protege a água abaixo do congelamento total.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Água: Solvente universal | Gelo flutua"
+            },
+            { id: 29, title: "Sais", meme: "💒", category: "Geral", description: "Casamento ácido-base",
+              explanation: `Compostos iônicos resultantes da reação entre ácido e base:<br><br>
+              Ácido + Base → Sal + Água<br><br>
+              Propriedades:<br>
+              - Conduzem eletricidade em solução<br>
+              - Alguns são solúveis, outros não<br>
+              - Podem ser ácidos, básicos ou neutros`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Qual sal é formado na reação entre HCl e NaOH?<br><br>
+              <strong>Resolução:</strong><br>
+              - HCl + NaOH → NaCl + H₂O<br>
+              - Portanto, cloreto de sódio (NaCl)`,
+              question: `(ENEM - Adaptada) O sal formado na reação entre ácido sulfúrico (H₂SO₄) e hidróxido de sódio (NaOH) é:<br><br>
+              a) Sulfato de sódio (Na₂SO₄)<br>
+              b) Sulfito de sódio (Na₂SO₃)<br>
+              c) Sulfeto de sódio (Na₂S)<br>
+              d) Cloreto de sódio (NaCl)<br>
+              e) Carbonato de sódio (Na₂CO₃)`,
+              answer: "a) Sulfato de sódio (Na₂SO₄)",
+              explanation_answer: `
+              H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Ácido + Base = Sal + Água"
+            },
+            { id: 30, title: "Química do Cotidiano", meme: "🧴", category: "Ambiental", description: "Sabão, remédio e fake news",
+              explanation: `Aplicações da química no dia a dia:<br><br>
+              - Sabão e detergente: ação emulsificante<br>
+              - Medicamentos: princípios ativos e formulações<br>
+              - Alimentos: conservantes, acidulantes<br>
+              - Combustíveis: gasolina, etanol<br>
+              - Materiais: plásticos, vidros, metais`,
+              example: `<strong>Exemplo Resolvido:</strong><br>
+              Como o sabão remove gordura?<br><br>
+              <strong>Resolução:</strong><br>
+              - Parte polar liga-se à água<br>
+              - Parte apolar liga-se à gordura<br>
+              - Forma micelas que envolvem a gordura`,
+              question: `(ENEM - Adaptada) A ação limpante do sabão deve-se à sua capacidade de:<br><br>
+              a) Dissolver a gordura em água<br>
+              b) Emulsionar a gordura em água<br>
+              c) Evaporar rapidamente<br>
+              d) Acidificar a água<br>
+              e) Aumentar a tensão superficial`,
+              answer: "b) Emulsionar a gordura em água",
+              explanation_answer: `
+              O sabão atua como emulsificante, permitindo que a gordura (apolar) se misture com a água (polar) na forma de micelas.`,
+              trick: "🎯 <strong>MACETE RÁPIDO:</strong> Sabão = Cabeça polar + Cauda apolar"
+            }
+        ];
+
+        // Referências aos elementos DOM
+        const topicsContainer = document.getElementById('topics-container');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const homePage = document.getElementById('home-page');
+        const topicPage = document.getElementById('topic-page');
+        const backBtn = document.getElementById('back-btn');
+        const progressFill = document.getElementById('progress-fill');
+        const showAnswerBtn = document.getElementById('show-answer-btn');
+        const answerDiv = document.getElementById('answer');
+
+        // Função para renderizar os tópicos
+        function renderTopics(filter = 'todos') {
+            topicsContainer.innerHTML = '';
+            
+            const filteredTopics = filter === 'todos' 
+                ? topics 
+                : topics.filter(topic => topic.category === filter);
+            
+            filteredTopics.forEach(topic => {
+                const topicCard = document.createElement('div');
+                topicCard.className = 'topic-card';
+                topicCard.innerHTML = `
+                    <div class="card-header">
+                        <div class="topic-icon">${topic.meme}</div>
+                        <h3 class="topic-title">${topic.title}</h3>
+                        <span class="topic-badge">${topic.category}</span>
+                    </div>
+                    <div class="card-content">
+                        <p class="topic-desc">${topic.description}</p>
+                        <button class="btn view-topic-btn" data-id="${topic.id}">Ver Explicação</button>
+                        <div class="completed-badge" style="display: none;">
+                            <span>🏆</span> Concluído!
+                        </div>
+                    </div>
+                `;
+                
+                topicsContainer.appendChild(topicCard);
+            });
+            
+            // Adicionar event listeners aos botões
+            document.querySelectorAll('.view-topic-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const topicId = parseInt(btn.dataset.id);
+                    showTopicPage(topicId);
+                });
+            });
+        }
+
+        // Função para mostrar a página de um tópico
+        function showTopicPage(topicId) {
+            const topic = topics.find(t => t.id === topicId);
+            
+            if (topic) {
+                // Atualizar elementos da página de tópico
+                document.getElementById('topic-icon').textContent = topic.meme;
+                document.getElementById('topic-title').textContent = topic.title;
+                document.getElementById('topic-analogy').textContent = topic.description;
+                document.getElementById('topic-category').textContent = topic.category;
+                document.getElementById('explanation').innerHTML = topic.explanation;
+                document.getElementById('example').innerHTML = topic.example;
+                document.getElementById('question').innerHTML = topic.question;
+                document.getElementById('trick').innerHTML = topic.trick;
+                
+                if (topic.answer) {
+                    document.getElementById('answer').innerHTML = `
+                        <p><strong>Resposta:</strong> ${topic.answer}</p>
+                        <p>${topic.explanation_answer}</p>
+                    `;
+                }
+                
+                // Resetar o botão de resposta
+                showAnswerBtn.textContent = 'Ver Resposta';
+                answerDiv.style.display = 'none';
+                
+                // Esconder página inicial e mostrar página de tópico
+                homePage.style.display = 'none';
+                topicPage.style.display = 'block';
+                
+                // Rolagem para o topo
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // Evento para o botão "Ver Resposta"
+        showAnswerBtn.addEventListener('click', function() {
+            if (answerDiv.style.display === 'none') {
+                answerDiv.style.display = 'block';
+                this.textContent = 'Ocultar Resposta';
+            } else {
+                answerDiv.style.display = 'none';
+                this.textContent = 'Ver Resposta';
+            }
+        });
+
+        // Evento para o botão Voltar
+        backBtn.addEventListener('click', function() {
+            topicPage.style.display = 'none';
+            homePage.style.display = 'block';
+            window.scrollTo(0, 0);
+        });
+
+        // Eventos para os botões de filtro
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remover classe 'active' de todos os botões
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Adicionar classe 'active' ao botão clicado
+                this.classList.add('active');
+                
+                // Filtrar tópicos
+                renderTopics(this.dataset.filter);
+            });
+        });
+
+        // Simular progresso (apenas para demonstração)
+        setTimeout(() => {
+            progressFill.style.width = '25%';
+            document.querySelector('.topics-count').textContent = '7/30';
+            document.querySelector('.progress-text').textContent = '23% completo';
+        }, 1000);
+
+        // Inicializar a página
+        document.addEventListener('DOMContentLoaded', function() {
+            // Renderizar todos os tópicos inicialmente
+            renderTopics();
+        });
+    </script>
+</body>
+</html>
